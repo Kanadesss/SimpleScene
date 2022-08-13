@@ -7,27 +7,27 @@ public class ItemSpawn : MonoBehaviour {
   [SerializeField] private int _itemCount;
   [SerializeField] private float _respawnTime;
   [SerializeField] private UnityEvent _respawnEvent;
-
-  public void RespawnItem() {
-    StartCoroutine(RespawnDelay());
-  }
-
-  private void Start () {
+  
+  void Start () {
     for(int itemsSpawned = 0; itemsSpawned < _itemCount; itemsSpawned++) {
 
       SpawnItem();
     }
   }
+  
+  public void RespawnItem() {
+    StartCoroutine(RespawnDelay());
+  }
 
   private void SpawnItem() {
     Instantiate(_item, transform.position, Quaternion.identity);
   }
-
+  
   private IEnumerator RespawnDelay() {
     yield return new WaitForSeconds(_respawnTime);
     SpawnItem();
   }
-
+  
   private void OnTriggerEnter2D(Collider2D collider) {
     if (collider.gameObject.CompareTag("Player")) {
 
