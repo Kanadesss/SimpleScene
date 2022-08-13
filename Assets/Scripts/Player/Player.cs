@@ -69,7 +69,7 @@ public class Player : MonoBehaviour {
       } else {        
         _moveState = MoveState.Walk;
         _animator.SetFloat("WalkSpeed", walkSpeed);
-      }     
+      }
     }
     Vector3 movement = new Vector3(walkDirection, 0, 0);
     _transform.Translate(movement * walkSpeed);
@@ -82,7 +82,6 @@ public class Player : MonoBehaviour {
       _moveState = MoveState.Jump;
       _animator.SetBool("IsJumping", true);
     }
-    
   }
 
   private void StopJump() {
