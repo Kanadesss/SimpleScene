@@ -15,11 +15,11 @@ public class EnemyMove : MonoBehaviour {
   private void Update() {
     transform.position = Vector3.MoveTowards(transform.position, _wayPoints[wayPoint].position, _runSpeed * Time.deltaTime);
 
-    if (Vector2.Distance(transform.position, _wayPoints[wayPoint].position) <= 1f) {
-
+    if (Vector2.Distance(transform.position, _wayPoints[wayPoint].position) <= 1f) { 
       _spriteRenderer.flipX = !_spriteRenderer.flipX;
       ++wayPoint;
       wayPoint %= _wayPoints.Length;
     }
+
   }
 }

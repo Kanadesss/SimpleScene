@@ -143,6 +143,8 @@ GameObject:
   - component: {fileID: 74292935}
   - component: {fileID: 74292933}
   - component: {fileID: 74292932}
+  - component: {fileID: 74292937}
+  - component: {fileID: 74292936}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -271,12 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c685a04bb7d6ac4297852db8a3f6fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  jumpForce: 800
-  _groundCheck: {fileID: 1954713069}
-  _WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 768
 --- !u!114 &74292933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0eb8e865f1a854a95342d45711b779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 74292932}
+  _playerMovement: {fileID: 74292937}
 --- !u!60 &74292935
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -329,6 +325,37 @@ PolygonCollider2D:
       - {x: 0.09878467, y: -0.017136987}
       - {x: 0.09676673, y: 0.035765134}
       - {x: 0.08692358, y: 0.08422807}
+--- !u!114 &74292936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74292925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9982e15369f9af24e8d1ea692392facb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &74292937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74292925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b8a40d5a08f3e4bb2289b91c35f62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 10
+  jumpForce: 10
+  _groundCheck: {fileID: 1954713069}
+  _WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 768
+  _playerAnimator: {fileID: 74292936}
 --- !u!1001 &78409647
 PrefabInstance:
   m_ObjectHideFlags: 0
