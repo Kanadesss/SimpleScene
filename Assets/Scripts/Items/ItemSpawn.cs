@@ -8,12 +8,12 @@ public class ItemSpawn : MonoBehaviour {
   [SerializeField] private float _respawnTime;
   [SerializeField] private UnityEvent _respawnEvent;
 
-  private void Start () {
+  void Start() {
 
     for (int itemsSpawned = 0; itemsSpawned < _itemCount; itemsSpawned++) {
       SpawnItem();
     }
-
+    
   }
 
   private void OnTriggerEnter2D(Collider2D collider) {
@@ -36,6 +36,5 @@ public class ItemSpawn : MonoBehaviour {
 
   private void SpawnItem() {
     Instantiate(_item, transform.position, Quaternion.identity);
-  }
 
 }

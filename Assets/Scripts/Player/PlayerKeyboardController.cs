@@ -21,5 +21,4 @@ public class PlayerKeyboardController : MonoBehaviour {
     _playerMovement.Move(_horizontalMove * Time.fixedDeltaTime, _jump);
     _jump = false;
   }
-
 }
