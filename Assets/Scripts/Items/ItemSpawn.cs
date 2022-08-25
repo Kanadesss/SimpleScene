@@ -36,5 +36,5 @@ public class ItemSpawn : MonoBehaviour {
 
   private void SpawnItem() {
     Instantiate(_item, transform.position, Quaternion.identity);
-
+  }
 }
